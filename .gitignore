@@ -1,0 +1,6 @@
+/vendor/
+composer.lock
+.phpunit.cache/
+.php-cs-fixer.cache
+# Internal review notes, kept local as in kirora-php.
+/docs/review.md

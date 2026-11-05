@@ -1,0 +1,72 @@
+{
+    "name": "kirora/kirora-laravel",
+    "description": "Kirora for Laravel.",
+    "keywords": ["php", "laravel", "kirora", "sdk", "api", "webhooks", "email", "marketing"],
+    "homepage": "https://kirora.io/docs/sdks/laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kirora and contributors",
+            "homepage": "https://github.com/kiroratech/kirora-laravel/contributors"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/kiroratech/kirora-laravel/issues",
+        "docs": "https://kirora.io/docs/sdks/laravel",
+        "source": "https://github.com/kiroratech/kirora-laravel"
+    },
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^12.0 || ^13.0",
+        "kirora/kirora-php": "^0.1"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "orchestra/testbench": "^10.0 || ^11.0",
+        "pestphp/pest": "^3.0 || ^4.0",
+        "phpstan/phpstan": "^2.0"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../kirora-php",
+            "options": {
+                "versions": {
+                    "kirora/kirora-php": "0.1.0"
+                }
+            }
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kirora\\Laravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kirora\\Laravel\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kirora\\Laravel\\KiroraServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "analyse": "phpstan analyse --memory-limit=1G",
+        "format": "php-cs-fixer fix",
+        "format:check": "php-cs-fixer fix --dry-run --diff"
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
